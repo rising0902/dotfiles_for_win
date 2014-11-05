@@ -1,0 +1,10 @@
+[user]
+	email = t9knowledge@knowledgedatabase.info
+	name = t9knowledge
+[core]
+	autocrlf = false
+	quotepath = false
+	filemode = false
+	editor = "C:/DevTool/vim/gvim.exe"
+[push]
+	default = simple
