@@ -1,6 +1,7 @@
 " vimの内部で使われる文字コードの指定
 set encoding=utf-8
 
+
 " for NeoBundle --------------------------------------------------
 if has('vim_starting')
   set nocompatible
@@ -158,6 +159,7 @@ set tabstop=2
 set hlsearch
 set laststatus=2
 set ambiwidth=double
+set noundofile
 colorscheme jellybeans
 
 cd $HOME
