@@ -1,14 +1,18 @@
 " vimの内部で使われる文字コードの指定
 set encoding=utf-8
 
+
 " for NeoBundle --------------------------------------------------
 if has('vim_starting')
+  set nocompatible
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+call neobundle#end()
 
 " add plugins
 NeoBundle 'itchyny/lightline.vim'
@@ -144,7 +148,6 @@ if has('mouse')
 endif
 " ファイルの文字コードの自動判別
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
-set nocompatible
 set shortmess+=I
 set nobackup
 set foldlevel=2
@@ -156,6 +159,7 @@ set tabstop=2
 set hlsearch
 set laststatus=2
 set ambiwidth=double
+set noundofile
 colorscheme jellybeans
 
 " Ctrl + hjkl でウィンドウ間を移動
