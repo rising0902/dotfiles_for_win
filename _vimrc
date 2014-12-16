@@ -160,6 +160,7 @@ set hlsearch
 set laststatus=2
 set ambiwidth=double
 set noundofile
+set noswapfile
 colorscheme jellybeans
 
 cd $HOME
