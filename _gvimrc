@@ -5,7 +5,8 @@ set ambiwidth=double
 set guioptions-=m
 set guioptions-=T
 colorscheme jellybeans
-set transparency=220
+autocmd FocusGained * set transparency=220
+autocmd FocusLost * set transparency=128
 
 map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
                          \set guioptions-=T <Bar>
