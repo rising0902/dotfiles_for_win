@@ -5,6 +5,6 @@
 	autocrlf = false
 	quotepath = false
 	filemode = false
-	editor = "C:/DevTool/vim/gvim.exe"
+	editor = "vim"
 [push]
 	default = simple

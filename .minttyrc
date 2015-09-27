@@ -1,0 +1,16 @@
+BoldAsFont=no
+Transparency=high
+CursorType=block
+Columns=174
+Rows=63
+BoldAsColour=no
+Locale=ja_JP
+Charset=UTF-8
+BackspaceSendsBS=yes
+ClicksPlaceCursor=yes
+RightClickAction=paste
+PgUpDnScroll=yes
+FontHeight=12
+Font=Ricty for Powerline
+FontSmoothing=default
+AllowBlinking=no

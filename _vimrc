@@ -1,20 +1,16 @@
-" vimの内部で使われる文字コードの指定
 set encoding=utf-8
 
+filetype off
 
-" for NeoBundle --------------------------------------------------
 if has('vim_starting')
-  set nocompatible
+  if &compatible
+    set nocompatible
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
 call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-call neobundle#end()
-
-" add plugins
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
@@ -29,23 +25,12 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'groenewege/vim-less'
-" NeoBundle 'Shougo/vimproc.vim', {
-" \ 'build' : {
-" \     'windows' : 'tools\\update-dll-mingw',
-" \     'cygwin' : 'make -f make_cygwin.mak',
-" \     'mac' : 'make -f make_mac.mak',
-" \     'linux' : 'make',
-" \     'unix' : 'gmake',
-" \    },
-" \ }
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'thinca/vim-quickrun'
-" ----------------------------------------------------------------
-
-" add colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'jeffreyiacono/vim-colors-wombat'
 NeoBundle 'nanotech/jellybeans.vim'
+call neobundle#end()
 
 " fot vim-gitgutter ----------------------------------------------
 let g:gitgutter_sign_added = '✚'
@@ -141,8 +126,9 @@ autocmd BufNewFile,BufRead *.less set filetype=css
 syntax enable
 set t_Co=256
 scriptencoding utf-8
-filetype plugin on
+filetype plugin indent on
 set laststatus=2
+
 if has('mouse')
   set mouse=a
   set ttymouse=xterm2
@@ -166,5 +152,4 @@ colorscheme jellybeans
 
 cd $HOME
 
-" 
 NeoBundleCheck
