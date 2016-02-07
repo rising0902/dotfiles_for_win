@@ -1,0 +1,47 @@
+#!/usr/bin/sh
+
+# Black       0;30     Dark Gray     1;30
+# Blue        0;34     Light Blue    1;34
+# Green       0;32     Light Green   1;32
+# Cyan        0;36     Light Cyan    1;36
+# Red         0;31     Light Red     1;31
+# Purple      0;35     Light Purple  1;35
+# Brown       0;33     Yellow        1;33
+# Light Gray  0;37     White         1;37
+
+if [ "$1" = "--debug" ] || [ "$1" = "-d" ]; then
+    export DEBUG_MODE=1
+    shift
+fi
+
+if [ -n "${DEBUG_MODE}" ]; then
+    export PS4='+ [${BASH_SOURCE##*/} : ${LINENO}] '
+    set -x
+fi
+
+# variables
+VERSION=0.0.1
+HELP=" usage : ./colors"
+ABSOLUTE_PATH=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+
+echo " 16 bit";
+echo -n  " Normal ";
+echo -en " \033[1;37;40m black  \033[m ";
+echo -en " \033[1;37;41m red    \033[m ";
+echo -en " \033[1;37;42m green  \033[m ";
+echo -en " \033[1;37;43m yellow \033[m ";
+echo -en " \033[1;37;44m blue   \033[m ";
+echo -en " \033[1;37;45m magenta\033[m ";
+echo -en " \033[1;37;46m cyan   \033[m ";
+echo -en " \033[1;37;47m white  \033[m ";
+echo -e "\n"
+echo -n  " Bright ";
+echo -en " \033[0;37;40m black  \033[m ";
+echo -en " \033[0;37;41m red    \033[m ";
+echo -en " \033[0;37;42m green  \033[m ";
+echo -en " \033[0;37;43m yellow \033[m ";
+echo -en " \033[0;37;44m blue   \033[m ";
+echo -en " \033[0;37;45m magenta\033[m ";
+echo -en " \033[0;37;46m cyan   \033[m ";
+echo -en " \033[0;37;47m white  \033[m ";
+echo -e "\n"
